@@ -6,7 +6,7 @@
 /*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:05 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/04/27 23:38:20 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:30:59 by ogregoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ ClapTrap::ClapTrap( std::string name )
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->name = name;
+	
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->name = copy.name;
 }
 
 ClapTrap::~ClapTrap( void )
@@ -31,7 +38,6 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
 {
-	std::cout << "Copy assignement operator called" << std::endl;
 	if (&copy != nullptr)
 	{
 		this->name = copy.name;
@@ -39,39 +45,41 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
 		this->energy = copy.energy;
 		this->damage = copy.damage;
 	}
+	std::cout << "Copy assignement operator called" << std::endl;
 	return(*this);
-}
-
-ClapTrap::ClapTrap(const ClapTrap &copy)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	this->name = copy.name;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if(this->energy == 0)
+	if(this->hit == 0 || this->energy == 0)
 	{
-		std::cout << "ClapTrap " << this->name << "is down :'( " << std::endl;
+		std::cout << this->name << " is down :'(" << std::endl;
 		return;
 	}
 	this->energy--;
-	std::cout << target << "attack" << this->name << ", causing" << this->damage << "points of damage!" << std::endl;
+	this->hit -= damage;
+	std::cout << this->name << " attack " << target << ", causing " << this->damage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	
+	if (this->hit == 0 || this->energy == 0)
+	{
+		std::cout << this->name << " is down :'(" << std::endl;
+		return;
+	}
 	this->hit -= amount;
+	std::cout << this->name << " take " << amount << " damage." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if(this->energy == 0)
+	if (this->energy == 0 || this->hit == 0)
 	{
-		std::cout << "ClapTrap " << this->name << "is down :'(" << std::endl;
+		std::cout << this->name << " is down :'(" << std::endl;
 		return;
 	}
 	this->energy--;
+	std::cout << this->name << " be repaired " << std::endl;
 	this->hit += amount;
 }
