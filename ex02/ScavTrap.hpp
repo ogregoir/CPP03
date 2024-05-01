@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 20:48:02 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/04/30 16:14:38 by ogregoir         ###   ########.fr       */
+/*   Created: 2024/04/30 15:53:41 by ogregoir          #+#    #+#             */
+/*   Updated: 2024/05/01 19:41:19 by ogregoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-# pragma once
 # include <string>
 # include <iostream>
 # include <math.h>
+# include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : public ClapTrap
 {
-    private:
-        std::string          name;
-        unsigned int         hit = 10;
-        unsigned int         energy = 10;
-        unsigned int         damage = 0;
-        ClapTrap( void );
+    private :
        
-        
     public:
-  
-        ClapTrap& operator=(const ClapTrap &copy);
-        ClapTrap( std::string name );
-        ClapTrap(const ClapTrap &copy);
-        ~ClapTrap( void );
+    
+        ScavTrap( void );
+        ScavTrap& operator=(const ScavTrap &copy);
+        ScavTrap( std::string name );
+        ScavTrap(const ScavTrap &copy);
         void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        void guardGate();
+        ~ScavTrap( void );
+        
 };
 
 #endif

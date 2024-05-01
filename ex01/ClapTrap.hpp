@@ -6,32 +6,30 @@
 /*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:02 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/04/30 16:14:38 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/05/01 19:04:01 by ogregoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
-# pragma once
 # include <string>
 # include <iostream>
 # include <math.h>
 
-class ClapTrap
+class  ClapTrap
 {
-    private:
+    protected:
         std::string          name;
         unsigned int         hit = 10;
         unsigned int         energy = 10;
         unsigned int         damage = 0;
-        ClapTrap( void );
-       
-        
+          
     public:
   
         ClapTrap& operator=(const ClapTrap &copy);
         ClapTrap( std::string name );
+        ClapTrap( void );
         ClapTrap(const ClapTrap &copy);
         ~ClapTrap( void );
         void attack(const std::string& target);
