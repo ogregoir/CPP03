@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:53:41 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/05/01 19:41:19 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/06 16:56:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -33,5 +32,3 @@ class ScavTrap : public ClapTrap
         ~ScavTrap( void );
         
 };
-
-#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:05 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/04/30 16:18:46 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/06 16:50:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ ClapTrap::ClapTrap( std::string name )
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	//this->name = copy.name;
 	*this = copy;
 }
 

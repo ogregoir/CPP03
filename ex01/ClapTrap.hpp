@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:02 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/05/01 19:04:01 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/06 16:51:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -36,5 +35,3 @@ class  ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
-
-#endif
