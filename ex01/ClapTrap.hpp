@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:02 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/07/06 16:51:41 by marvin           ###   ########.fr       */
+/*   Updated: 2024/07/13 16:25:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class  ClapTrap
 {
     protected:
         std::string          name;
-        unsigned int         hit = 10;
-        unsigned int         energy = 10;
-        unsigned int         damage = 0;
+        unsigned int         hit;
+        unsigned int         energy;
+        unsigned int         damage;
           
     public:
   

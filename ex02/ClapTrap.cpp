@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:05 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/05/01 19:17:22 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/13 16:40:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@ ClapTrap::ClapTrap( void )
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 	this->name = "None";
+	this->hit = 10;
+    this->energy = 10;
+    this->damage = 0;
 }
 
 ClapTrap::ClapTrap( std::string name )
 {
 	std::cout << "ClapTrap name constructor called" << std::endl;
 	this->name = name;
+	this->hit = 10;
+    this->energy = 10;
+    this->damage = 0;
 	
 }
 
@@ -29,6 +35,9 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 	this->name = copy.name;
+	this->hit = 10;
+    this->energy = 10;
+    this->damage = 0;
 }
 
 ClapTrap::~ClapTrap( void )
@@ -38,7 +47,7 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
 {
-	if (&copy != nullptr)
+	if (&copy != this && !copy.name.empty())
 	{
 		this->name = copy.name;
 		this->hit = copy.hit;

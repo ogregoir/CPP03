@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:53:30 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/05/01 19:21:54 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/13 16:40:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,21 @@ ScavTrap::~ScavTrap( void )
 ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	this->hit = 100;
+    this->energy = 50;
+    this->damage = 20;
 	*this = copy;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 {
+	if (&copy != this && !copy.name.empty())
+	{
+		this->name = copy.name;
+		this->hit = copy.hit;
+		this->energy = copy.energy;
+		this->damage = copy.damage;
+	}
 	std::cout << "ScavTrap copy assignement operator called" << std::endl;
 	return(*this);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 19:27:20 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/05/01 19:39:34 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/07/13 16:41:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,21 @@ FragTrap::~FragTrap( void )
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
-	*this = copy;
+    *this = copy;
+    this->hit = 100;
+    this->energy = 100;
+    this->damage = 30;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &copy)
 {
+    if (&copy != this && !copy.name.empty())
+	{
+		this->name = copy.name;
+		this->hit = copy.hit;
+		this->energy = copy.energy;
+		this->damage = copy.damage;
+	}
 	std::cout << "FragTrap copy assignement operator called" << std::endl;
 	return(*this);
 }
