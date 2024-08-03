@@ -6,7 +6,7 @@
 /*   By: ogregoir <ogregoir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:05 by ogregoir          #+#    #+#             */
-/*   Updated: 2024/08/03 16:55:15 by ogregoir         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:26:55 by ogregoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap( void )
 
 ClapTrap::ClapTrap( std::string name )
 {
-	std::cout << "ClapTrap name constructor called" << std::endl;
+	std::cout << "Name constructor called" << std::endl;
 	this->name = name;
 	this->hit = 10;
     this->energy = 10;
